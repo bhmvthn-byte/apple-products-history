@@ -1,0 +1,33 @@
+/* App-level styles */
+main {
+  display: block;
+}
+
+/* Fixed Apple-style global nav offset for anchor jumps */
+section[id] {
+  scroll-margin-top: 44px;
+}
+
+::selection {
+  background: rgba(0, 113, 227, 0.16);
+}
+
+:focus-visible {
+  outline: 2px solid #0071e3;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

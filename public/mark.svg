@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-label="苹果产品编年史">
+  <path d="M3.9 19.5 C7.6 19.5 8.6 16.8 11.2 13.7 C13.6 10.9 14.9 9.6 16.9 7.4 C18.4 5.8 19.3 4.9 20.3 3.9"
+        fill="none" stroke="#1d1d1f" stroke-width="1.6" stroke-linecap="round"/>
+  <g fill="#1d1d1f">
+    <circle cx="3.9" cy="19.5" r="2.5"/>
+    <circle cx="11.2" cy="13.7" r="2.4"/>
+    <circle cx="20.1" cy="4.3" r="2.5"/>
+  </g>
+</svg>

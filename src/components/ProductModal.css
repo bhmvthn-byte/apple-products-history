@@ -1,0 +1,231 @@
+/* Apple.com style detail sheet */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  animation: modal-fade 0.25s var(--ease-out) both;
+}
+
+.modal__panel {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: 86vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 28px;
+  padding: 48px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.24);
+  animation: modal-rise 0.32s var(--ease-out) both;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.modal__close:hover {
+  background: #e8e8ed;
+}
+
+.modal__close svg {
+  width: 14px;
+  height: 14px;
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 32px;
+}
+
+.modal__icon {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  color: var(--modal-accent);
+}
+
+.modal__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.modal__meta {
+  min-width: 0;
+}
+
+.modal__category {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.modal__title {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  color: var(--color-text);
+}
+
+.modal__year {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.modal__tagline {
+  margin-top: 22px;
+  font-size: 21px;
+  line-height: 1.35;
+  letter-spacing: 0.002em;
+  color: var(--color-text-secondary);
+}
+
+.modal__description p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.modal__section {
+  margin-top: 32px;
+  padding-top: 26px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.modal__section-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 16px;
+}
+
+.modal__specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+}
+
+.modal__spec {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--color-text);
+}
+
+.modal__spec-dot {
+  flex: 0 0 auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-top: 8px;
+}
+
+.modal__significance {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-height: 720px) {
+  .modal__panel {
+    padding: 32px 36px;
+  }
+
+  .modal__tagline {
+    margin-top: 16px;
+    font-size: 19px;
+  }
+
+  .modal__section {
+    margin-top: 24px;
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 734px) {
+  .modal {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .modal__panel {
+    padding: 28px 22px 32px;
+    border-radius: 24px;
+    max-height: 90vh;
+  }
+
+  .modal__header {
+    align-items: flex-start;
+    gap: 14px;
+    padding-right: 24px;
+  }
+
+  .modal__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .modal__tagline {
+    margin-top: 18px;
+    font-size: 19px;
+  }
+
+  .modal__specs {
+    grid-template-columns: 1fr;
+  }
+}

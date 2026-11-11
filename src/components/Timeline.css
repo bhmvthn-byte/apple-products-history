@@ -1,0 +1,293 @@
+/* Apple.com style horizontal product timeline */
+
+.timeline {
+  padding: 108px 0 96px;
+  background: var(--color-bg);
+}
+
+.timeline__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.timeline__title {
+  font-size: clamp(36px, 5vw, 48px);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.016em;
+  color: var(--color-text);
+}
+
+.timeline__subtitle {
+  margin-top: 14px;
+  font-size: clamp(17px, 1.9vw, 21px);
+  line-height: 1.38;
+  letter-spacing: 0.004em;
+  color: var(--color-text-secondary);
+  text-wrap: balance;
+}
+
+/* Category pills */
+.timeline__filters {
+  margin-top: 36px;
+  position: relative;
+}
+
+.timeline__filters-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 2px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.timeline__filters-track::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline__filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.timeline__filter:hover {
+  background: #e8e8ed;
+}
+
+.timeline__filter--active {
+  background: var(--color-text);
+  color: #fff;
+}
+
+.timeline__filter--active:hover {
+  background: #000;
+}
+
+.timeline__filter-icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  opacity: 0.75;
+}
+
+.timeline__filter-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.timeline__filter--active .timeline__filter-icon {
+  opacity: 1;
+}
+
+/* Rail */
+.timeline__rail-wrap {
+  position: relative;
+  margin-top: 44px;
+}
+
+.timeline__rail {
+  display: flex;
+  align-items: stretch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  padding: 4px 0 12px;
+  outline: none;
+}
+
+.timeline__rail::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline__rail.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+
+.timeline__point {
+  flex: 0 0 auto;
+  width: 272px;
+  padding: 0 10px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline__year {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+.timeline__marker {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline__marker::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: 50%;
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+.timeline__dot {
+  position: relative;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--point-color);
+  box-shadow: 0 0 0 3px #fff;
+}
+
+.timeline__card {
+  width: 100%;
+  margin-top: 14px;
+  flex: 1;
+}
+
+/* Arrows */
+.timeline__arrow {
+  position: absolute;
+  top: 46%;
+  z-index: 4;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: opacity var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.timeline__arrow:hover:not(:disabled) {
+  background: #fff;
+}
+
+.timeline__arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.timeline__arrow--prev {
+  left: -18px;
+}
+
+.timeline__arrow--next {
+  right: -18px;
+}
+
+/* Meta / progress */
+.timeline__rail-meta {
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.timeline__progress {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: var(--color-border-light);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.timeline__progress span {
+  display: block;
+  height: 100%;
+  background: var(--color-text);
+  border-radius: var(--radius-full);
+  transition: width 80ms linear, margin-left 80ms linear;
+}
+
+.timeline__hint {
+  flex: 0 0 auto;
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+
+.timeline__empty {
+  margin-top: 64px;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 1040px) {
+  .timeline__arrow--prev {
+    left: 2px;
+  }
+
+  .timeline__arrow--next {
+    right: 2px;
+  }
+}
+
+@media (max-width: 734px) {
+  .timeline {
+    padding: 72px 0 64px;
+  }
+
+  .timeline__filters-track {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 2px 2px 8px;
+    scrollbar-width: none;
+  }
+
+  .timeline__filters-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .timeline__point {
+    width: 236px;
+    padding: 0 8px;
+  }
+
+  .timeline__arrow {
+    display: none;
+  }
+
+  .timeline__rail-meta {
+    margin-top: 18px;
+  }
+}

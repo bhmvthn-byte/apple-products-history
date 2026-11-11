@@ -1,0 +1,223 @@
+.categories {
+  background: #fff;
+  padding: 104px 0 120px;
+}
+
+.categories__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
+
+.categories__header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.categories__title {
+  font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 1.08;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  color: var(--color-text);
+  text-wrap: balance;
+}
+
+.categories__subtitle {
+  margin-top: 16px;
+  font-size: clamp(17px, 1.8vw, 21px);
+  line-height: 1.42;
+  color: var(--color-text-secondary);
+  text-wrap: balance;
+}
+
+.categories__grid {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.categories__cell {
+  display: block;
+}
+
+.categories__tile {
+  position: relative;
+  display: block;
+  min-height: 440px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #f5f5f7;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.categories__tile:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 30px 60px -20px rgba(0, 0, 0, 0.2);
+}
+
+/* Per-category ambient tints */
+.categories__tile--mac {
+  background: linear-gradient(145deg, #f7f8fb 0%, #e6ebf3 100%);
+}
+.categories__tile--iphone {
+  background: linear-gradient(145deg, #f8f7fa 0%, #e9e6ee 100%);
+}
+.categories__tile--ipad {
+  background: linear-gradient(145deg, #f6f8fd 0%, #e4eaf8 100%);
+}
+.categories__tile--ipod {
+  background: linear-gradient(145deg, #fdf7f9 0%, #f7e5ec 100%);
+}
+.categories__tile--watch {
+  background: linear-gradient(145deg, #fdf6f5 0%, #f6e2df 100%);
+}
+.categories__tile--airpods {
+  background: linear-gradient(145deg, #f5fbf7 0%, #e2f2e8 100%);
+}
+.categories__tile--appletv {
+  background: linear-gradient(145deg, #f8f5fd 0%, #eae2f8 100%);
+}
+.categories__tile--homepod {
+  background: linear-gradient(145deg, #fdf9f2 0%, #f7ead6 100%);
+}
+.categories__tile--vision {
+  background: linear-gradient(145deg, #faf6fd 0%, #eee0f9 100%);
+}
+.categories__tile--accessories {
+  background: linear-gradient(145deg, #f8f8f9 0%, #e9e9ec 100%);
+}
+
+.categories__tile-content {
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+  padding: 48px;
+}
+
+.categories__count {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  right: 24px;
+  padding: 7px 14px;
+  border-radius: 980px;
+  background: rgba(255, 255, 255, 0.66);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  font-size: 12px;
+  font-weight: 600;
+  color: #1d1d1f;
+  letter-spacing: 0.01em;
+}
+
+.categories__name {
+  font-size: clamp(30px, 3.4vw, 42px);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  color: var(--color-text);
+}
+
+.categories__desc {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #4c4c50;
+}
+
+.categories__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 22px;
+  font-size: 16px;
+  color: #0066cc;
+}
+
+.categories__tile:hover .categories__more {
+  text-decoration: underline;
+}
+
+.categories__art {
+  position: absolute;
+  right: -18px;
+  bottom: -34px;
+  width: 300px;
+  height: 300px;
+  color: #1d1d1f;
+  opacity: 0.08;
+  transform: rotate(-6deg);
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease;
+  pointer-events: none;
+}
+
+.categories__art svg {
+  width: 100%;
+  height: 100%;
+}
+
+.categories__tile:hover .categories__art {
+  opacity: 0.13;
+  transform: rotate(-2deg) scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .categories {
+    padding: 76px 0 88px;
+  }
+
+  .categories__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .categories__tile {
+    min-height: 380px;
+  }
+
+  .categories__art {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (max-width: 734px) {
+  .categories {
+    padding: 64px 0 72px;
+  }
+
+  .categories__grid {
+    margin-top: 36px;
+  }
+
+  .categories__tile {
+    min-height: 320px;
+    border-radius: 22px;
+  }
+
+  .categories__tile-content {
+    padding: 32px 28px;
+  }
+
+  .categories__count {
+    top: 18px;
+    right: 18px;
+  }
+
+  .categories__art {
+    width: 210px;
+    height: 210px;
+    right: -26px;
+    bottom: -40px;
+  }
+}
