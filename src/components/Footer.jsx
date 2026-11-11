@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="footer__top">
           <div className="footer__brand">
             <img src={iconUrl} alt="" width="28" height="28" />
-            <p>苹果产品编年史</p>
+            <p>苹果纪年</p>
           </div>
 
           <div className="footer__columns">
@@ -46,7 +46,7 @@ const Footer = () => {
           <p>
             本网站与 Apple Inc. 无关联。所有产品名称与商标归 Apple Inc. 所有。
           </p>
-          <p>数据截至 2026 年 11 月 · © {new Date().getFullYear()} Apple Products History</p>
+          <p>数据截至 2026 年 11 月 · © {new Date().getFullYear()} Apple Chronicle</p>
         </div>
       </div>
     </footer>

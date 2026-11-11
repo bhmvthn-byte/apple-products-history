@@ -19,9 +19,9 @@ const Hero = () => {
         </p>
 
         <h1 className="hero__title">
-          苹果产品
+          苹果
           <br />
-          编年史
+          纪年
         </h1>
 
         <p className="hero__subtitle">
